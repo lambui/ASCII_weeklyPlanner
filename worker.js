@@ -1,6 +1,7 @@
 var header = "";
 var body = "";
 var boxLength = 0;
+var fontSize = 0;
 
 var dateInput = 
 [
@@ -14,6 +15,15 @@ var dateInput =
 ];
 
 var globalIndex = [0, 0, 0, 0, 0, 0, 0];
+
+function getFontSize()
+{
+	fontSize = document.getElementById("fontSize").value;
+
+	//minimum fontSize is 5
+	if(fontSize < 5)
+		fontSize = 5;
+}
 
 function getBoxLength()
 {
@@ -263,10 +273,12 @@ function displayInput(maxHeight)
 
 function execute()
 {
+	getFontSize();
 	getBoxLength();
 	generateHeader();
 	getInput();
 	displayInput(getMaxHeight());
 
 	document.getElementsByClassName("outputField")[0].value = header + body;
+	document.getElementById("output").style.fontSize = fontSize+"px";
 }
