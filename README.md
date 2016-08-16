@@ -5,5 +5,7 @@
 
 • It is super easy to use, simply follow the instruction on top of the page and you can have your weekly schedule written neatly in ASCII to copy and paster everywhere on the internet, or keep it in sticky note on your desktop.
 
+• Try it out @ https://lambui.github.io/
+
 #### A little example:
 ![Alt text](/review.png?raw=true "Review")
