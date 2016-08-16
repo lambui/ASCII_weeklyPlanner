@@ -6,36 +6,51 @@
 	<script src="worker.js"></script>
 </head>
 <body>
-	<div>
-		<div>
-			<p>Monday</p>
-			<textarea type="text" class="inputField"></textarea>
+	<h1>ASCII WEEKLY PLANNER</h1>
+	<p>1. type in activities you have for each day into appropriate text boxes</p>
+	<p>2. type in the box size number to customize the ASCII art size, or else it will default at 10 (10 characters per column)</p>
+	<p>3. click 'Generate Schedule!' button and your ASCII WEEKLY PLANNER will be waiting below!!!</p>
+	<p>4. simply highlight and then do the ole copy-paste (CTRL-A, CTRL-C, CTRL-V for more time-saving)</p>
+	<!--day of the week-->
+	<div style="float:left">
+		<div style="float:left">
+			<p>Monday:</p>
+			<textarea type="text" class="inputField" rows="10"></textarea>
 		</div>
-		<div>
-			<p>Tuesday</p>
-			<textarea type="text" class="inputField"></textarea>
+		<div style="float:left">
+			<p>Tuesday:</p>
+			<textarea type="text" class="inputField" rows="10"></textarea>
 		</div>
-		<div>
-			<p>Wednesday</p>
-			<textarea type="text" class="inputField"></textarea>
+		<div style="float:left">
+			<p>Wednesday:</p>
+			<textarea type="text" class="inputField" rows="10"></textarea>
 		</div>
-		<div>
-			<p>Thursday</p>
-			<textarea type="text" class="inputField"></textarea>
+		<div style="float:left">
+			<p>Thursday:</p>
+			<textarea type="text" class="inputField" rows="10"></textarea>
 		</div>
-		<div>
-			<p>Friday</p>
-			<textarea type="text" class="inputField"></textarea>
+		<div style="float:left">
+			<p>Friday:</p>
+			<textarea type="text" class="inputField" rows="10"></textarea>
 		</div>
-		<div>
-			<p>Saturday</p>
-			<textarea type="text" class="inputField"></textarea>
+		<div style="float:left">
+			<p>Saturday:</p>
+			<textarea type="text" class="inputField" rows="10"></textarea>
 		</div>
-		<div>
-			<p>Sunday</p>
-			<textarea type="text" class="inputField"></textarea>
+		<div style="float:left">
+			<p>Sunday:</p>
+			<textarea type="text" class="inputField" rows="10"></textarea>
 		</div>
 	</div>
-	<button type = "button" onClick = "execute()">Generate Schedule!</button>
+
+	<!--settings, customize stuff-->
+	<div style="float:left">
+		<p>Column Size: </p>
+		<input type="text" id="boxLength">
+	</div><br>
+	<div style="float:left">
+		<button type = "button" onClick = "execute()">Generate Schedule!</button><br><br>
+		<textarea type="text" class="outputField" readonly="readonly" cols="200" rows="20"></textarea>
+	</div>
 </body>
 </html>

@@ -1,4 +1,6 @@
 var header = "";
+var body = "";
+var boxLength = 0;
 
 var dateInput = 
 [
@@ -13,7 +15,14 @@ var dateInput =
 
 var globalIndex = [0, 0, 0, 0, 0, 0, 0];
 
-var body = "";
+function getBoxLength()
+{
+	boxLength = document.getElementById("boxLength").value;
+
+	//minimum boxLength is 10
+	if(boxLength < 10)
+		boxLength = 10;
+}
 
 function generateHeader()
 {
@@ -23,7 +32,6 @@ function generateHeader()
 		+---------+---------+---------+---------+---------+---------+---------+
 	*/
 
-	var boxLength = 30;
 	header = "";
 
 	//create header
@@ -80,7 +88,6 @@ function getInput()
 
 function getMaxHeight() //this also format the dateInput info to fit into box size and make it look nice 
 {
-	var boxLength = 30;
 	var max = 0;
 	for(var i = 0; i < 7; i++)
 	{
@@ -162,10 +169,10 @@ function getMaxHeight() //this also format the dateInput info to fit into box si
 						break;
 
 					case " ":
-					case "	":
+					case "	": //nullify the use of tab char by converting it into whitespace
 						if(remainingChar > 0)
 						{
-							parsedContent += dateInput[i][j];
+							parsedContent += " ";
 							remainingChar -= 1;
 						}
 						else //if not then add linebreak
@@ -216,7 +223,6 @@ function resetGlobalIndex()
 
 function displayInput(maxHeight)
 {
-	var boxLength = 30;
 	body = "";
 	resetGlobalIndex();
 
@@ -257,7 +263,10 @@ function displayInput(maxHeight)
 
 function execute()
 {
+	getBoxLength();
 	generateHeader();
 	getInput();
 	displayInput(getMaxHeight());
+
+	document.getElementsByClassName("outputField")[0].value = header + body;
 }
