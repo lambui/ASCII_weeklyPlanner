@@ -1,3 +1,4 @@
+//pure js below
 var header = "";
 var body = "";
 var boxLength = 0;
